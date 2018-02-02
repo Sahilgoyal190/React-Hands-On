@@ -40,6 +40,10 @@ class Main extends Component {
         this.setState({currentPage:newMenu});
     }
 
+    handleLogoChange = (logotext) =>{
+        this.setState({headerLogo:logotext})
+    }
+
     render() {
         return (
             <div>
@@ -48,7 +52,7 @@ class Main extends Component {
                     logo={this.state.headerLogo}
                     chahngeMenu={this.handlechangeMenu}
                 />
-                <Dashboard currentPage={this.state.currentPage}/>
+                <Dashboard logoChange = {this.handleLogoChange} currentPage={this.state.currentPage}/>
                 <Footer text={this.state.footertext} />
             </div>
         )
